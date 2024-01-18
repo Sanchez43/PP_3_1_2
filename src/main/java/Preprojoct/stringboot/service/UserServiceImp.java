@@ -14,33 +14,24 @@ public class UserServiceImp implements UserService {
 
     private final UserDao userDao;
 
-    @Autowired
     public UserServiceImp(UserDao userDao) {
         this.userDao = userDao;
     }
 
-    @Transactional
     @Override
-    public void add(User user) {
-        userDao.add(user);
-    }
-
-    @Transactional
-    @Override
-    public void update(User user) {
-        userDao.update(user);
-    }
-
-    @Transactional
-    @Override
-    public void delete(Long id) {
-        userDao.delete(id);
-    }
-
     @Transactional(readOnly = true)
+    public List<User> getAllUsers(){return userDao.getAllUsers();}
     @Override
-    public List<User> getAllUsers() {
-        return userDao.getAllUsers();
-    }
+    @Transactional
+    public void createUser(User user) {userDao.createUser(user);}
+    @Override
+    @Transactional(readOnly = true)
+    public User getUserById(Long id) {return userDao.getUserById(id);}
+    @Override
+    @Transactional
+    public void editUser(Long id, User user) {userDao.editUser(id, user);}
+    @Override
+    @Transactional
+    public void deleteUser(long id) {userDao.deleteUser(id);}
 
 }

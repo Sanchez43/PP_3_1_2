@@ -8,6 +8,18 @@ h1 {
     color: #4f4b4b;
     text-align: center;
 }
+.p-style {
+    color: #4f4b4b;
+    text-align: center;
+}
+.a-style {
+    padding: 2px 5px;
+    background-color: #0b68db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
 
 table {
     width: 100%;
